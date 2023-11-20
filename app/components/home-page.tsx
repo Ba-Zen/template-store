@@ -14,8 +14,8 @@ interface Props {
 }
 export default function HomePage({ templates }: Props) {
   return (
-    <>
-      <div className='pt-24 px-4'>
+    <div className='max-w-7xl mx-auto pb-48'>
+      <div className='py-24 px-4'>
         <h1 className='text-3xl md:text-[5vw] md:leading-[1.1] font-semibold tracking-tight pb-6'>
           <Balancer>
             Premium website templates to get you up and running{' '}
@@ -26,7 +26,7 @@ export default function HomePage({ templates }: Props) {
           Explore the latest templates built with React and Next.js.
         </p>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10'>
         {templates.map((t, i) => (
           <Link
             href='#'
@@ -56,6 +56,6 @@ export default function HomePage({ templates }: Props) {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   )
 }
