@@ -4,7 +4,7 @@ import { client } from '@/lib/client'
 import { groq } from 'next-sanity'
 
 const templateQuery = groq`*[_type == 'product' && productType == "template"]{
-  _id,title, mainImage, "slug": slug.current,  "category": category->title,
+  _id,title, mainImage, "slug": slug.current,  "category": category->title, price
   }`
 
 export default async function Home() {

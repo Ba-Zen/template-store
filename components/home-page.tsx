@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Balancer from 'react-wrap-balancer'
 import { urlFor } from '@/lib/client'
 interface Template {
-  name: string
+  title: string
   price: string
   category: string
   mainImage: string
@@ -38,7 +38,7 @@ export default function HomePage({ templates }: Props) {
               <div className='w-full h-full overflow-hidden'>
                 <Image
                   src={urlFor(t.mainImage).url()}
-                  alt={`${t.name} template on a laptop`}
+                  alt={`${t.title} template on a laptop`}
                   width={1000}
                   height={1000}
                   priority
@@ -50,9 +50,9 @@ export default function HomePage({ templates }: Props) {
               </p>
               <div className='flex justify-between'>
                 <h3 className='text-2xl font-semibold tracking-tight pb-2'>
-                  {t.name}
+                  {t.title}
                 </h3>
-                <p className='tracking-tight'>{t.price}</p>
+                <p className='tracking-tight'>${t.price}</p>
               </div>
             </div>
           </Link>
