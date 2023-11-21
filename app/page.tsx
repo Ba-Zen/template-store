@@ -1,4 +1,4 @@
-import HomePage from './components/home-page'
+import HomePage from '../components/home-page'
 
 import { client } from '@/lib/client'
 import { groq } from 'next-sanity'
