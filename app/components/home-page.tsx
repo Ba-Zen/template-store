@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Balancer from 'react-wrap-balancer'
-
+import { urlFor } from '@/lib/client'
 interface Template {
   name: string
   price: string
   category: string
-  img: string
+  mainImage: string
+  slug: string
 }
 
 interface Props {
@@ -29,13 +30,13 @@ export default function HomePage({ templates }: Props) {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10'>
         {templates.map((t, i) => (
           <Link
-            href='#'
+            href={`/products/${t.slug}`}
             key={i}
           >
             <div className='flex flex-col px-2'>
               <div className='w-full h-full overflow-hidden'>
                 <Image
-                  src={t.img}
+                  src={urlFor(t.mainImage).url()}
                   alt={`${t.name} template on a laptop`}
                   width={1000}
                   height={1000}
